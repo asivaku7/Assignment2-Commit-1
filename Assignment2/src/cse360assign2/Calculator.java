@@ -9,19 +9,21 @@ package cse360assign2;
 
 /**
  *  This is the class that will be used to do the operations and print the message. It
- *  has a private variable total and methods that include a constructor, an add method, 
- *  a subtract method, a multiplication method, a division method, and a getHistory 
- *  method.
+ *  has two private variables total and result and methods that include a constructor, an 
+ *  add method, a subtract method, a multiplication method, a division method, and a 
+ *  getHistory method.
  */
 public class Calculator {
 
 	private int total;
+	private String result;
 	
 	/**
 	 * Sole constructor.
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		result="0 ";
 		
 	}
 	
@@ -42,6 +44,7 @@ public class Calculator {
 	public void add (int value) 
 	{
 		total = total + value;
+		result = result + "+ " + Integer.toString(value) + " ";
 	}
 	
 	/**
@@ -52,6 +55,7 @@ public class Calculator {
 	public void subtract (int value) 
 	{
 		total = total - value;
+		result = result + "- " + Integer.toString(value) + " ";
 	}
 	
 	/**
@@ -62,6 +66,7 @@ public class Calculator {
 	public void multiply (int value) 
 	{
 		total = total * value;
+		result = result + "* " + Integer.toString(value) + " ";
 	}
 	
 	/**
@@ -77,6 +82,7 @@ public class Calculator {
 			total = 0;
 		else
 			total = total / value;
+		result = result + "/ " + Integer.toString(value) + " ";
 	}
 	
 	/**
@@ -87,7 +93,8 @@ public class Calculator {
 	 * 
 	 * @return			returns a String of the history of operations and values	
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory () 
+	{		
+		return result;
 	}
 }
