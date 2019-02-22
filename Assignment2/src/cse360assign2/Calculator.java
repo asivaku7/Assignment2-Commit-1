@@ -22,6 +22,7 @@ public class Calculator {
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		
 	}
 	
 	/**
@@ -30,7 +31,7 @@ public class Calculator {
 	 * @return			returns current total value that is stored in variable, total.
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -38,8 +39,9 @@ public class Calculator {
 	 * 
 	 * @param value		the value to be added to the total variable.
 	 */
-	public void add (int value) {
-		
+	public void add (int value) 
+	{
+		total = total + value;
 	}
 	
 	/**
@@ -47,8 +49,9 @@ public class Calculator {
 	 * 
 	 * @param value		the value to be subtracted from the total variable.
 	 */
-	public void subtract (int value) {
-		
+	public void subtract (int value) 
+	{
+		total = total - value;
 	}
 	
 	/**
@@ -56,8 +59,9 @@ public class Calculator {
 	 * 
 	 * @param value		the value to be multiplied with the total variable.
 	 */
-	public void multiply (int value) {
-		
+	public void multiply (int value) 
+	{
+		total = total * value;
 	}
 	
 	/**
@@ -67,8 +71,12 @@ public class Calculator {
 	 * 
 	 * @param value		the value to be used as a divisor.
 	 */
-	public void divide (int value) {
-		
+	public void divide (int value) 
+	{
+		if(value == 0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	/**
